@@ -5,8 +5,14 @@
  * @description : page_components
  */
 
+import {
+  Chapter,
+  MenuChapters
+} from './chapters.js'
+
 const {
   AppBar,
+  Box,
   Button,
   Card,
   CardActions,
@@ -14,11 +20,18 @@ const {
   Container,
   Icon,
   IconButton,
-  Link,
+  Link: Anchor,
   makeStyles,
   Toolbar,
   Typography
     } = window['MaterialUI'];
+
+const {
+  BrowserRouter: Router,
+  Switch,
+  Route,
+  Link
+    } = ReactRouterDOM;
 
 const e = React.createElement;
 
@@ -40,9 +53,9 @@ function PageTitle (props) {
 
   return e(AppBar, { position: 'static' } ,
     e(Toolbar, null,
-      e(IconButton, { edge: 'start', className: classes.menuButton, color: 'inherit', 'aria-label': 'menu' },
-        e(Icon, null, 'menu')
-      ),
+      e(IconButton, { edge: 'start', className: classes.menuButton, color: 'inherit', 'aria-label': 'home' , component: Link, to: '/' },
+          e(Icon, null, 'home')
+        ),
       e(Typography, null, props.children),
     )
   );
@@ -51,18 +64,30 @@ function PageTitle (props) {
 class Page extends React.Component {
 
   render() {
-    return e('div', { className: 'root' },
-      e(PageTitle, null, 'Proyecto Edu'),
-      e('br'),
-      e(Container, { maxWidth: 'sm' },
-        e(Card, null,
-          e(CardContent, null,
-            this.props.children
+    return (
+      e(Router, null,
+        e('div', { className: 'root' },
+          e(PageTitle, null, 'Proyecto Edu'),
+          e('br'),
+          e(Container, { maxWidth: 'sm' },
+            e(Switch, null,
+              e(Route, { path: "/chapter/:chapter" },
+                e(Chapter),
+              ),
+              e(Route, { path: "/" },
+                e(MenuChapters),
+              ),
+            ),
+            e(Card, null,
+              e(CardContent, null,
+                this.props.children
+              ),
+              e(CardActions)
+            )
           ),
-          e(CardActions)
+          e(Copyright)
         )
-      ),
-      e(Copyright)
+      )
     );
   }
 }
@@ -99,7 +124,7 @@ class ExampleButton extends React.Component {
 function Copyright () {
   return e(Typography, { variant: "body2", color: "textSecondary", align: "center" },
     'Copyright © ',
-    e(Link, { color: "inherit", href: "https://github.com/nourthe"},
+    e(Anchor, { color: "inherit", href: "https://github.com/nourthe"},
       'nourthe'
     ),
     '  ',
