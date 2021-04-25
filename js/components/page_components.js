@@ -10,6 +10,8 @@ import {
   MenuChapters
 } from './chapters.js'
 
+import { Editor } from './editor.js';
+
 const {
   AppBar,
   Box,
@@ -74,6 +76,9 @@ class Page extends React.Component {
               e(Route, { path: "/chapter/:chapter" },
                 e(Chapter),
               ),
+              e(Route, { path: "/editor" },
+               e(Editor)
+              ),
               e(Route, { path: "/" },
                 e(MenuChapters),
               ),
@@ -94,7 +99,7 @@ class Page extends React.Component {
 
 class App extends React.Component {
   render() {
-    return e(Page, null, e(ExampleButton));
+    return e(Page);
   }
 }
 

@@ -13,6 +13,7 @@ App	js/components/page_components.js	/^class App extends React.Component {$/;"	c
 Cargando ...	index.html	/^      <h3><pre>  Cargando ...<\/pre><\/h3>$/;"	j
 Chapter	js/components/chapters.js	/^function Chapter () {$/;"	f
 Copyright	js/components/page_components.js	/^function Copyright () {$/;"	f
+Editor	js/components/editor.js	/^class Editor extends React.Component{$/;"	c
 ExampleButton	js/components/page_components.js	/^class ExampleButton extends React.Component {$/;"	c
 ExerciseComponent	js/components/exercises.js	/^function ExerciseComponent (props) {$/;"	f
 Exercises	js/components/exercises.js	/^function Exercises (props) {$/;"	f
@@ -24,9 +25,11 @@ api	js/components/exercises.js	/^  api: [$/;"	p	class:exercisesList
 app	index.html	/^    <div id="app">$/;"	I
 body	css/style.css	/^html, body {$/;"	s
 chapters	js/components/chapters.js	/^const chapters = [$/;"	C
+componentDidMount	js/components/editor.js	/^  componentDidMount () {$/;"	m	class:Editor
 constructor	js/components/page_components.js	/^  constructor(props) {$/;"	m	class:ExampleButton
 dom	js/components/exercises.js	/^  dom: [$/;"	p	class:exercisesList
 e	js/components/chapters.js	/^const e = React.createElement;$/;"	C
+e	js/components/editor.js	/^const e = React.createElement;$/;"	C
 e	js/components/exercises.js	/^const e = React.createElement;$/;"	C
 e	js/components/page_components.js	/^const e = React.createElement;$/;"	C
 exercisesList	js/components/exercises.js	/^const exercisesList = {$/;"	c
@@ -35,10 +38,14 @@ html	css/style.css	/^html, body {$/;"	s
 init	js/main.js	/^const init = function () {$/;"	f
 liked	js/components/page_components.js	/^    this.state = { liked: false };$/;"	p	class:ExampleButton.constructor.state
 mostrarMenu	js/lean-util-lib.js	/^export function mostrarMenu () {$/;"	f
+myCodeMirror	js/components/editor.js	/^let myCodeMirror = null;$/;"	v
 profeConsole	js/profe.js	/^export function profeConsole(texto) {$/;"	f
 render	js/components/chapters.js	/^  render() {$/;"	m	class:MenuChapters
+render	js/components/editor.js	/^  render() {$/;"	m	class:Editor
 render	js/components/page_components.js	/^  render() {$/;"	m	class:App
 render	js/components/page_components.js	/^  render() {$/;"	m	class:ExampleButton
 render	js/components/page_components.js	/^  render() {$/;"	m	class:Page
+runCode	js/components/editor.js	/^  runCode(){$/;"	m	class:Editor
+startCode	js/components/editor.js	/^const startCode = `\/\/ Ejecutá Javascript desde tu navegador, Lean xD$/;"	C
 state	js/components/page_components.js	/^    this.state = { liked: false };$/;"	c	class:ExampleButton.constructor
 useStyles	js/components/page_components.js	/^const useStyles = makeStyles((theme) => ({$/;"	C
