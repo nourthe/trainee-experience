@@ -5,7 +5,7 @@
  * @description : main
  */
 'use strict';
-import { App } from './components/page_components.js';
+import { App } from './components/app.js';
 
 const init = function () {
   ReactDOM.render(
