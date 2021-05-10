@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
   <header>
+    <!-- Proyecto Trainee-experience -->
+    <!-- Desarrollado por Nahuel Ourthe. -->
+
+    <!-- Estas leyendo el punto de entrada de esta aplicacion. -->
+    <!-- Acá vas a poder ver como se carga el código propio de la aplicación,
+      pero también muchas librerías que ayudan al desarrollo de la aplicación.
+    -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
@@ -9,41 +16,62 @@
 
     <title>Proyecto Edu</title>
 
-    <!-- Cargar Material UI Icons -->
+    <!-- -------------------- -->
+    <!-- Carga de Estilos CSS -->
+    <!-- -------------------- -->
+    <!-- Cargar Material UI Icons
+      Esta es la librería de componentes gráficos más popular para trabajar
+      con React. -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 
-    <!-- CodeMirror CSS -->
+    <!-- CodeMirror CSS: Librería que incluye un editor de código.
+      Se incluye temporalmente para realizar una serie de pruebas. -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css" integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/theme/3024-night.min.css" integrity="sha512-SbB0juc9/nEA5PEN7S+lnglc7wADe2DLKZKXn3D+eyebL06fTbFHNzgMlpX9oqFjWEKZ6uH7zNCUSv+j9Dpwpw==" crossorigin="anonymous" />
-
-    <link rel="stylesheet" href="/css/style.css" />
+    <!-- Estilos de la applicación: Humildes aportes propios de estilos. -->
+    <link rel="stylesheet" href="./css/style.css"/>
 
   </header>
 
   <body>
 
+    <!-- -------------------- -->
+    <!-- DOM de la aplicacion -->
+    <!-- -------------------- -->
+    <!-- Acá se inyectará toda la aplicación con la ayuda de ReactDOM -->
     <div id="app">
       <h3><pre>  Cargando ...</pre></h3>
     </div>
 
 
-    <!-- Cargar React. -->
+
+    <!-- ---------------- -->
+    <!-- Carga de Scripts -->
+    <!-- ---------------- -->
+    <!-- Cargar React: Incluye React y el indispensable ReactDOM -->
     <!-- Nota: cuando se despliegue, reemplazar "development.js" con "production.min.js". -->
     <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
-
-    <!-- Cargar React Router. -->
+    <!-- Cargar React Router: Para manejar las direcciones URL -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.2.0/react-router-dom.js" integrity="sha512-LOOlcIrzggklo15g/pbJis06755L5SZYg2RZEUw7t8k/aALW/atg2qg6h8oSLIvk25ulbzhz/p4LH2PUYa+rLw==" crossorigin="anonymous"></script>
 
-    <!-- Cargar Material UI Core -->
+    <!-- Cargar Material UI Core:
+      El núcleo javascript de la librería de componentes gráficos más popular
+      para trabajar con React. -->
     <script src="https://unpkg.com/@material-ui/core@latest/umd/material-ui.development.js"></script>
 
-    <!-- Cargar Code Mirror JS -->
+    <!-- Cargar Code Mirror JS: También para las pruebas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js" integrity="sha512-LwxFyHyqmDdcint8dhTSHeJuI+uH5r/vrcGkxH4QhHGP8SpNaS9MVa1BxZRNTb1GPyLBAWrjbWpZTPGgtDgJOw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/javascript/javascript.min.js" integrity="sha512-vjRTsZb6KBcNtLlBmtWZhjcctZRmUI/G2kYJLDJIzE6EoDdruleHFjF4gzKXf5fsLD0oMEIW7Ol3dcpWdL98Tg==" crossorigin="anonymous"></script>
 
-    <!-- Cargar Módulo Principal de la web -->
-    <script type="module" src="/js/main.js"></script>
+    <!-- ------------------- -->
+    <!-- CARGA DE APLICACIÓN -->
+    <!-- ------------------- -->
+    <!-- Cargar Módulo Principal de la applicación
+      Desde aquí comienza todo. Dirigete a /src/js/main.js para saber como
+      continúa esto -->
+    <script type="module" src="./js/main.js"></script>
+
   </body>
 </html>
 

@@ -2,7 +2,8 @@
  * @class       : app
  * @author      : nahuel (nahuel@$HOSTNAME)
  * @created     : martes abr 27, 2021 00:11:01 -03
- * @description : app
+ * @description : Módulo App de Trainee Experience.
+ *    Será documentado en próximas versiones.
  */
 
 import { PageTitle, Copyright } from './page_components.js';

@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "reload": "*"
+  },
+  "scripts": {
+    "start": "reload -f -b -d ./src"
+  }
+}
