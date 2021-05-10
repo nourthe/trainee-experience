@@ -38,3 +38,11 @@ guardes un cambio en el código fuente.
 
 Luego para ejecutar este servidor `reload`, solo tenés que ejecutar `npm start`
 adentro de este mismo repositorio.
+
+
+## Actualización
+
+> Antes de actualizar, es recomendable hacer un backup de la carpeta de trabajo
+> src/js/util mientras el proyecto Trainee Experience esté en fase de pruebas.
+En el caso de que salga una actualización de Trainee Experience, para
+instalarla podés ejecutar `git pull`.

@@ -25,6 +25,14 @@ const exercisesList = {
         'getElementById',
         'visibility'
       ],
+      test: () => {
+
+      },
+      element: e('div',
+        {style: {visibility: 'hidden', background: 'chocolate', padding: '4pt'}, id: 'ejercicio1'},
+          e('b', null, 'Felicitaciones'),
+          ', Si estás viendo esto, es porque resolviste correctamente el ejercicio 1.'
+      ),
       clue: `Recuerda que puedes encontrar un objeto por su id usando document.getElementById('id')`
     },
     {
@@ -36,6 +44,7 @@ const exercisesList = {
         'getElementById',
         'visibility'
       ],
+      element: e('div', {style: {visibility: 'hidden'}, id: 'ejercicio1'}, e('b', null, 'Felicitaciones'), 'Si estás viendo esto, es porque resolviste correctamente el ejercicio 1.'),
       clue: `Recuerda que puedes encontrar un objeto por su id usando document.getElementById('id')`
     },
   ],
@@ -50,6 +59,7 @@ const exercisesList = {
         'getElementById',
         'visibility'
       ],
+      element: e('div', {style: {visibility: 'hidden'}, id: 'ejercicio1'}, '<b>Felicitaciones</b> Si estás viendo esto, es porque resolviste correctamente el ejercicio 1.'),
       clue: `Recuerda que puedes encontrar un objeto por su id usando document.getElementById('id')`
     },
   ]
@@ -62,10 +72,11 @@ function ExerciseComponent (props) {
       e(CardContent, null,
         e('h3', null, exercise.name),
         e('p', null, exercise.statement),
+        exercise.element,
       ),
       e(CardActions, null,
-        e(Button, {variant: 'contained', color: 'primary' }, 'Ingresar'),
-        e(Button, {variant: 'contained', color: 'default' }, 'Mas info.')
+        e(Button, {variant: 'contained', color: 'primary' }, 'Probar'),
+        e(Button, {variant: 'contained', color: 'secondary' }, 'Pista')
       )
     )
   );
