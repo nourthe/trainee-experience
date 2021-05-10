@@ -6,6 +6,11 @@
 
 const e = React.createElement;
 
+import dom from './exercises/dom.js';
+import api from './exercises/api.js';
+import { TEConsoleComponent } from '../console.js';
+
+
 const {
   Box,
   Button,
@@ -15,54 +20,8 @@ const {
 } = window['MaterialUI'];
 
 const exercisesList = {
-  dom: [
-    {
-      slug: 'ejercicio1',
-      name: 'ejercicio1',
-      statement: `Hay un objeto invisible con id 'ejercicio1'. La functión
-          'ejercicio1_mostrarObjeto()' debe mostrar el objeto con ese id.`,
-      tags: [
-        'getElementById',
-        'visibility'
-      ],
-      test: () => {
-
-      },
-      element: e('div',
-        {style: {visibility: 'hidden', background: 'chocolate', padding: '4pt'}, id: 'ejercicio1'},
-          e('b', null, 'Felicitaciones'),
-          ', Si estás viendo esto, es porque resolviste correctamente el ejercicio 1.'
-      ),
-      clue: `Recuerda que puedes encontrar un objeto por su id usando document.getElementById('id')`
-    },
-    {
-      slug: 'ejercicio2',
-      name: 'ejercicio2',
-      statement: `Hay un objeto invisible con id 'ejercicio1'. La functión
-          'ejercicio1_mostrarObjeto()' debe mostrar el objeto con ese id.`,
-      tags: [
-        'getElementById',
-        'visibility'
-      ],
-      element: e('div', {style: {visibility: 'hidden'}, id: 'ejercicio1'}, e('b', null, 'Felicitaciones'), 'Si estás viendo esto, es porque resolviste correctamente el ejercicio 1.'),
-      clue: `Recuerda que puedes encontrar un objeto por su id usando document.getElementById('id')`
-    },
-  ],
-
-  api: [
-    {
-      slug: 'ejercicio1',
-      name: 'ejercicio1',
-      statement: `Hay un objeto invisible con id 'ejercicio1'. La functión
-          'ejercicio1_mostrarObjeto()' debe mostrar el objeto con ese id.`,
-      tags: [
-        'getElementById',
-        'visibility'
-      ],
-      element: e('div', {style: {visibility: 'hidden'}, id: 'ejercicio1'}, '<b>Felicitaciones</b> Si estás viendo esto, es porque resolviste correctamente el ejercicio 1.'),
-      clue: `Recuerda que puedes encontrar un objeto por su id usando document.getElementById('id')`
-    },
-  ]
+  dom,
+  api
 };
 
 function ExerciseComponent (props) {
@@ -75,7 +34,7 @@ function ExerciseComponent (props) {
         exercise.element,
       ),
       e(CardActions, null,
-        e(Button, {variant: 'contained', color: 'primary' }, 'Probar'),
+        e(Button, {onClick: exercise.test, variant: 'contained', color: 'primary' }, 'Probar'),
         e(Button, {variant: 'contained', color: 'secondary' }, 'Pista')
       )
     )
@@ -92,6 +51,7 @@ function Exercises (props) {
   });
   return (
     e('div', null,
+      e(TEConsoleComponent),
       e('h3', null, props.chapter.name),
       e('p', null, props.chapter.description),
       exerciseComponents
